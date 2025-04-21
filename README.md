@@ -1,22 +1,22 @@
-# Ferramenta de Gestão de Tempo
+# Dash Python Explore
 ---
 
-Conjunto de Scripts desenvolvidos por [Guilherme Arruda Pedroso](https://www.linkedin.com/in/guilherme-arruda-pedroso/) e [João Pedro Bomfim](https://www.linkedin.com/in/joão-pedro-bomfim-028018225/)
+Set of Scripts developed by [Guilherme Arruda Pedroso](https://www.linkedin.com/in/guilherme-arruda-pedroso/)
 
 ---
-### Instalação
+### Installation
 ---
 
-__1. Clonar Repositório__
+__1. Clone Repository__
 ```
-git clone https://github.com/GuiArrP/FDG.git
+git clone https://github.com/GuiArrP/Python-Dashboard
 ```
 
-__2. Criar Ambiente de Desenvolvimento e Instalar Dependências__
+__2. Create Development Environment and Install Dependencies__
 
 Windows ([conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)):
 ```
-conda create -n FDG python=3.12.3
+conda create -n pythondash python=3.12.3
 conda activate FDG
 python -m pip install --upgrade pip wheel
 python -m pip install -r requirements.txt
@@ -25,13 +25,15 @@ python -m pip install --upgrade notebook traitlets
 
 Linux:
 ```
-$ python -m venv --clear --copies FDG
-$ source FDG/bin/activate
+$ python -m venv --clear --copies pythondash
+$ source pythondash/bin/activate
 (notebooks) $ python -m pip install --upgrade pip wheel
 (notebooks) $ python -m pip install -r requirements.txt
 (notebooks) $ python -m pip install --upgrade notebook traitlets
 ```
 
 ---
-### Uso
+### Description
+
+ - color_map: a simple map where the main objective is to color regions and states according to the current selection.
 ---
