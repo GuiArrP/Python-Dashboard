@@ -17,7 +17,7 @@ __2. Create Development Environment and Install Dependencies__
 Windows ([conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)):
 ```
 conda create -n pythondash python=3.12.3
-conda activate FDG
+conda activate pythondash
 python -m pip install --upgrade pip wheel
 python -m pip install -r requirements.txt
 python -m pip install --upgrade notebook traitlets

@@ -11,6 +11,7 @@ body {
     justify-content: flex-start;
     gap: 40px;
     align-items: center;
+    height: 60px;
 }
 
 .sidebar {
