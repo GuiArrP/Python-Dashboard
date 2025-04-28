@@ -1,22 +1,33 @@
-body {
+body, html {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f0f2f5;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 1fr;
+    height: 100vh;
 }
 
 .header {
+    grid-area: header;
     background-color: #405b9b;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 94px 180px auto;
+    height: 80px;
+    justify-items: center;
     align-items: center;
-    height: 60px;
 }
 
 .sidebar {
-    background-color: #ccc; /* cinza claro */
-    color: white;
+    grid-area: sidebar;
+    background-color: #ccc;
     padding: 20px;
     width: 15%;
     height: calc(100vh - 80px); /* Altura total menos a altura do topo */
@@ -40,6 +51,9 @@ body {
     font-family: 'Segoe UI';
     font-size: 28px;
     margin: 0;
+    height: 100%;
+    display: flex; 
+    align-items: center; 
 }
 
 .radio-header {

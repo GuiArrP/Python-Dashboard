@@ -51,7 +51,7 @@ app = Dash(__name__)
 
 app.layout = html.Div([
     html.Div([
-        html.Header("Color Map", className="title"),
+        html.Header("Color Map", className="title", style={"gridColumn": "2"}),
         dcc.RadioItems(
             options=[
                 {'label':'Per Region','value':'region'},
@@ -61,7 +61,8 @@ app.layout = html.Div([
             inline=True,
             id='control-macro',
             labelStyle={'marginRight': '20px'},
-            className="radio-header"
+            className="radio-header",
+            style={"gridColumn": "3"}
         )
     ], className="header"),
     html.Div([
@@ -79,7 +80,7 @@ app.layout = html.Div([
             )
         ],className="main")
     ])
-])
+], className="container")
 
 @app.callback(
     Output('control-region-state', 'options'),
