@@ -51,36 +51,33 @@ app = Dash(__name__)
 
 app.layout = html.Div([
     html.Div([
-        html.Header("Color Map", className="title", style={"gridColumn": "2"}),
+        html.Header("Color Map", className="title"),
         dcc.RadioItems(
             options=[
                 {'label':'Per Region','value':'region'},
                 {'label':'Per State','value':'state'},
             ],
             value='region',
-            inline=True,
             id='control-macro',
-            labelStyle={'marginRight': '20px'},
-            className="radio-header",
-            style={"gridColumn": "3"}
+            className="radio-header"
         )
     ], className="header"),
     html.Div([
-        html.Div([
-            dcc.Dropdown(
-                id='control-region-state',
-                multi=True,
-                className="filter-sidebar"
-            )
-        ],className="sidebar"),
-        html.Div([
-            dcc.Graph(
-                id="map-colored",
-                style={"height": "85vh", "width": "100%"}
-            )
-        ],className="main")
-    ])
-], className="container")
+        html.Label(id='dropdown-title-macro',className="title-filter-sidebar"),
+        dcc.Dropdown(
+            id='control-region-state',
+            multi=True,
+            className="filter-sidebar"
+        )
+    ],className="sidebar"),
+    html.Div([
+        dcc.Graph(
+            id="map-colored",
+            style={"height": "85vh", "width": "100%"},
+            className="visualization"
+        )
+    ],className="main")
+], className="dashboard")
 
 @app.callback(
     Output('control-region-state', 'options'),
@@ -93,6 +90,7 @@ def refresh_dropdown(type):
 
 @app.callback(
     Output('map-colored', 'figure'),
+    Output('dropdown-title-macro', 'children'),
     Input('control-macro', 'value'),
     Input('control-region-state', 'value')
 )
@@ -143,7 +141,9 @@ def update_map(type, selection):
         legend_title_text="Regions" if type == "region" else "States"
     )
 
-    return fig
+    title="Region:" if type == 'region' else "State:"
+
+    return fig, title
 
 # Run the app
 if __name__ == '__main__':

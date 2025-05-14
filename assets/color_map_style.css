@@ -4,7 +4,7 @@ body, html {
     height: 100%;
 }
 
-.container {
+.dashboard {
     display: grid;
     grid-template-areas:
         "header header"
@@ -16,58 +16,85 @@ body, html {
 
 .header {
     grid-area: header;
-    background-color: #405b9b;
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 94px 180px auto;
+    grid-template-rows: 1fr;
     height: 80px;
+    background-color: #405b9b;
     justify-items: center;
     align-items: center;
 }
 
 .sidebar {
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background-color: #ccc;
     padding: 20px;
-    width: 15%;
-    height: calc(100vh - 80px); /* Altura total menos a altura do topo */
+    width: 100%;
+    height: calc(100vh - 80px);
     float: left;
     box-sizing: border-box;
-    font-family: 'Segoe UI Bold', sans-serif;
 }
 
 .main {
+    grid-area: main;
     background-color: white;
     padding: 20px;
-    width: 85%;
-    float: left;
+    width: 100%;
     height: calc(100vh - 80px);
     box-sizing: border-box;
     overflow-y: auto;
 }
 
+
 .title {
-    color: white;
-    font-family: 'Segoe UI';
-    font-size: 28px;
-    margin: 0;
-    height: 100%;
+    grid-column: 2;
     display: flex; 
     align-items: center; 
+    height: 100%;
+    margin: 0;
+    
+    font-family: 'Segoe UI';
+    font-size: 28px;
+    color: white;
 }
 
 .radio-header {
+    grid-column: 3;
     display: flex;
     gap: 20px;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    font-family: 'Segoe UI';
     font-size: 16px;
+    color: white;
+}
+
+.title-filter-sidebar {
+    display: flex;
+    height: auto;
+    line-height: normal;
+    
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 11;
+    color: Black;
 }
 
 .filter-sidebar {
     display: flex;
     gap: 20px;
     color: Black;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
+}
+
+.visualization {
+    display: flex;
+    height: auto;
+    line-height: normal;
 }
